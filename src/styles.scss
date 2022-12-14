@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+table {
+    width: 100%;
+     border-collapse: collapse;
+ }
+ 
+ th {
+     text-align: center;
+ }
+ 
+ td {
+     text-align: center;
+ }
+ 
+ .cell-breakWord {
+     word-break: break-all;
+     max-width: 50px;
+ }
+ 
+ #customer {
+     font-family: Arial, Helvetica, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
+ 
+     #customer td, #customers th {
+         border: 1px solid #ddd;
+         padding: 8px;
+     }
+ 
+     #customer tr:nth-child(even) {
+         background-color: #f2f2f2;
+     }
+ 
+     #customer tr:hover {
+         background-color: #ddd;
+     }
+ 
+     #customer th {
+         padding-top: 12px;
+         padding-bottom: 12px;
+         text-align: center;
+         background-color: #04AA6D;
+         color: white;
+        }
+         /*
+ 
+ <table>
+    <tr>
+       <td style="width:75%">
+          Lorem ipsum dolor sit amet [...]
+       </td>
+       <td class="cell-breakWord">
+          Loremipsumdolorsitametconsectetur
+       </td>
+    </tr>
+ </table>
+ 
+ */
+ 

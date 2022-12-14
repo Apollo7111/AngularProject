@@ -1,0 +1,106 @@
+body {
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #000;
+}
+
+.student-profile .card {
+    border-radius: 10px;
+}
+
+.student-profile .card .card-header .profile_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}
+
+.student-profile .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.student-profile .card p {
+    font-size: 16px;
+    color: #000;
+}
+
+.student-profile .table th,
+.student-profile .table td {
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #000;
+}
+
+
+
+.theme-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.theme-container span {
+    font-weight: bold;
+}
+
+.theme-container h2, p {
+    padding: 0.3em 0 0.2em;
+    margin: 0;
+}
+
+.theme-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3em 0.5em;
+    border: 1px solid #999;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    margin-top: 1em;
+}
+
+.theme-title {
+    padding: 0;
+}
+
+.theme-name {
+    width: 100%;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+}
+
+.subscribers {
+    text-align: right;
+    flex-basis: 25%;
+}
+
+.subscribers button {
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.subscribe {
+    background-color: green;
+}
+
+.unsubscribe {
+    background-color: red;
+}
+
+time {
+    font-weight: bold;
+}
