@@ -4,21 +4,23 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ThemeListComponent } from './themes/theme-list/theme-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './auth/profile/profile.component';
+import { AuthModule } from './auth/auth.module';
+import { ThemeModule } from './themes/theme.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeListComponent,
     MainComponent,
     ProfileComponent,
   ],
   imports: [
-    BrowserModule,
+    AuthModule,
+    ThemeModule,
     AppRoutingModule,
+    BrowserModule,
     CoreModule,
     HttpClientModule,
   ],
