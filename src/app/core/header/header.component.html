@@ -3,7 +3,7 @@
 
     <div class="header">
       <a routerLink="" class="logo">GamingForum</a>
-      <a *ngIf="!isLogged" routerLink="/theme/create">Create A Post</a>
+      <a *ngIf="isLogged" routerLink="/theme/create">Create A Post</a>
       <div class="header-right">
         <a class="active" routerLink="">Home</a>
         <a *ngIf="!isLogged" routerLink="/auth/login">Login</a>

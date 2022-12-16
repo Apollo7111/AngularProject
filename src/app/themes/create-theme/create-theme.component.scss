@@ -1,4 +1,23 @@
 //create theme form
+.astext {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+  position: relative;
+    display: inline-block;
+  //  padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+ //   margin-top: 40px;
+    letter-spacing: 4px
+}
+
 html {
     height: 100%;
   }
@@ -13,7 +32,7 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 550px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.712);
@@ -28,7 +47,45 @@ html {
     color: #fff;
     text-align: center;
   }
-  
+  // INPUT BOX
+  .login-box .input-box {
+    position: relative;
+  }
+  // .login-box .input-box textarea{
+  //   width: 100%;
+  //   padding: 0.5em;
+  //   margin: 0;
+  // }
+  .login-box .input-box textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    resize: none;
+  }
+  .login-box .input-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .login-box .input-box textarea:focus ~ label,
+  .login-box .input-box textarea:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #42682b;
+    font-size: 12px;
+  }
+  // USER BOX
   .login-box .user-box {
     position: relative;
   }
@@ -44,6 +101,9 @@ html {
     outline: none;
     background: transparent;
   }
+  
+
+
   .login-box .user-box label {
     position: absolute;
     top:0;

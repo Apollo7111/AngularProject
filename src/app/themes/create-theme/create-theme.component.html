@@ -2,21 +2,47 @@
 <body>
     <div class="login-box">
         <h2>Create A New Post</h2>
-        <form>
+        <form #form="ngForm" (ngSubmit)="createThemeHandler(form)">
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="postName" #titleInput="ngModel" ngModel required [minlength]="5">
             <label>Title</label>
+            <ng-container *ngIf="titleInput.touched">
+              <p class="error" *ngIf="titleInput.errors?.['required']">
+                Theme name is required.
+              </p>
+              <p class="error" *ngIf="titleInput.errors?.['minlength']">
+                Theme name must be at least {{titleInput.errors?.['minlength']['requiredLength']}} characters long.
+              </p>
+            </ng-container>
           </div>
-          <div class="user-box">
-            <input type="email" name="" required="">
+          <div class="input-box">
+            <textarea type="text" name="postText" #textInput="ngModel" ngModel required [minlength]="10" rows="9"> </textarea>
             <label>Content</label>
+            <ng-container *ngIf="textInput.touched">
+              <p class="error" *ngIf="textInput.errors?.['required']">
+                The field with your post is required.
+              </p>
+              <p class="error" *ngIf="textInput.errors?.['minlength']">
+                Post must be at least {{textInput.errors?.['minlength']['requiredLength']}} characters long.
+              </p>
+            </ng-container>
+            <ng-container>
+              
+            </ng-container>
           </div>
-          <a href="#">
+          <a>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Submit
+            <button class="astext">Submit</button>
+          </a>
+          <a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button class="astext" type="button" routerLink="">Cancel</button>
           </a>
         </form>
       </div>

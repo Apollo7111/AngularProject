@@ -16,7 +16,7 @@
 </head>
 <body>
 		
-
+<form [formGroup]="form" (ngSubmit)="saveProfile()">
 <header class="ScriptHeader">
     <div class="rt-container">
     	<div class="col-rt-12">
@@ -43,8 +43,8 @@
             <h3>Username</h3>
           </div>
           <div class="card-body">
-            <p class="mb-0"><strong class="pr-1">Email</strong>peter@abv.bg</p>
-            <p class="mb-0"><strong class="pr-1">Number of Posts</strong>10</p>
+            <p class="mb-0"><strong class="pr-1">Email</strong>{{user2?.email}}</p>
+            <p class="mb-0"><strong class="pr-1">Number of Posts</strong>{{user2?.themes?.length}}</p>
             <p class="mb-0"><strong class="pr-1">Liked Posts</strong>4</p>
           </div>
         </div>
@@ -52,19 +52,36 @@
       <div class="col-lg-8">
         <div class="card shadow-sm">
           <div class="card-header bg-transparent border-0">
-            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Something About Yourself</h3>
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Something About Yourself </h3>
+            
           </div>
+          
           <div class="card-body pt-0">
             <div class="card shadow-sm">
-              <div class="card-header bg-transparent border-0">
-              <a> AWKEJIOQKWHEIUQW EUQWHEQWHE QWEHQWJEKQWHEJKQW QWEHKJQWHEKQHWEJKH QJKQWHEKJQHWEKJHQW EQWKJEHKQJWHEKQJWEQWKJ EMNWEBQW EBQWJHEGQWHJEBQWH EQWHJEBQW E</a>
+              <ng-container *ngIf="showEditMode">
+              <textarea class="card-header bg-transparent border-0" type="text" rows="8" formControlName="additionalInfo">{{user.additionalInfo}}</textarea>
+            </ng-container>
+              <div *ngIf="!showEditMode" class="card-header bg-transparent border-0">
+              <a> {{user.additionalInfo}}</a>
               </div>
-              <div class="card-body pt-0">
-                  <p></p>
-              </div>
+              <!-- <div class="card-body pt-0">
+                 <p></p>
+              </div> -->
+              <ng-template #edit>
+                <button class="btn btn-default btn-sm color: green" style="color: rgb(0, 248, 0)" type="submit">Save</button>
+                <button class="btn btn-default btn-sm" style="color: rgb(204, 0, 0)" (click)="toggleEditMode()" type="button">Cancel</button>
+              </ng-template>
+              <ng-template #nonEdit>
+                <button (click)="toggleEditMode()" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-edit"></span> Edit Info
+              </button>
+              </ng-template>
+              <ng-container *ngTemplateOutlet="showEditMode ? edit : nonEdit"></ng-container>
+              
             </div>
           </div>
         </div>
+        
         <!-- <div class="card shadow-sm">
           <div class="card-header bg-transparent border-0">
             <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
@@ -145,7 +162,7 @@
 
 
     <!-- Analytics -->
-
+  </form>
 	</body>
     
 </html>

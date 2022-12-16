@@ -1,4 +1,23 @@
 //login form
+.astext {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+  position: relative;
+    display: inline-block;
+  //  padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+ //   margin-top: 40px;
+    letter-spacing: 4px
+}
+
 html {
     height: 101%;
   }

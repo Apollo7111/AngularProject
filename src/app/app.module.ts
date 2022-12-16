@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
-import { ProfileComponent } from './auth/profile/profile.component';
 import { AuthModule } from './auth/auth.module';
 import { ThemeModule } from './themes/theme.module';
 
@@ -14,7 +13,6 @@ import { ThemeModule } from './themes/theme.module';
   declarations: [
     AppComponent,
     MainComponent,
-    ProfileComponent,
   ],
   imports: [
     AuthModule,

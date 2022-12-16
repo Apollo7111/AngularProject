@@ -1,16 +1,28 @@
 <body>
-    <div class="login-box">
+  <div class="login-box">
+      <form #form="ngForm" class="login" (ngSubmit)="loginHandler(form)">
         <h2>Login</h2>
-        <form>
+        <div class="user-box">
+          <input #usernameInput="ngModel" type="text" ngModel name="username" required>
+          <label>Username</label>
+          <!-- {{usernameInput.errors | json}} -->
+          <p *ngIf="usernameInput.errors?.['required'] && usernameInput.touched" class="error">Username is required</p>
+        </div>
           <div class="user-box">
-            <input type="text" name="" required="">
-            <label>Username</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="" required="">
+            <input #passwordInput="ngModel" type="password" ngModel name="password" required [minlength]="5">
             <label>Password</label>
+            <ng-container *ngIf="passwordInput.touched">
+            <p *ngIf="passwordInput.errors?.['required'] || passwordInput.errors?.['minlength']" class="error">Password must be at least 5 characters long!</p>
+          </ng-container>
           </div>
-            <a type="button" (click)="loginHandler()">Submit</a>
-        </form>
-      </div>
-    </body>
+            <!-- <a type="button" (click)="loginHandler()">Submit</a> -->
+            <a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <button class="astext">Login</button>
+            </a>
+          </form>
+          </div>
+        </body>

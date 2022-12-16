@@ -5,5 +5,6 @@ export interface IUser {
     email: string;
     username: string;
     password: string;
+    additionalInfo: string;
     __v: number;
   }

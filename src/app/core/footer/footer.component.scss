@@ -8,13 +8,17 @@ body{
     font-family: sans-serif;
 }
  footer{
-     position: bottom;
+     position: fixed;
+     display: inline-block;
+     padding-bottom: 20px;
      bottom: 0;
      left: 0;
      right: 0;
 //    // background: #111;
      height: auto;
      width: 98vw;
+    // min-height: 100vh;
+
 
   //   padding-top: 40px;
    //  color: #fff;
@@ -71,10 +75,11 @@ body{
 }
 
 .footer-bottom{
+   // position: static;
     background: #000;
     width: 100vw;
-    padding: 20px;
-padding-bottom: 40px;
+    padding: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 .footer-bottom p{

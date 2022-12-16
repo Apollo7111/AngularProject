@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -9,12 +10,20 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
+  @ViewChild(NgForm,
+    { static: true }) 
+    form!: ElementRef<HTMLInputElement>;
+
   constructor(private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute) {
    
 
   }
 
-  loginHandler(){
+  loginHandler(form: NgForm): void{
+    if(form.invalid){
+      return;
+    }
+    const {email, password} = form.value;
      this.authService.user = {
       username: "John",
       password: "12345",
@@ -22,6 +31,7 @@ export class LoginComponent {
       posts: [],
       themes: [],
       _id: "1",
+      additionalInfo: "private authService: AuthServiceprivate authService: AuthServiceprivate authService: AuthService",
       __v: 0
     };
 

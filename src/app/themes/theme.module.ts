@@ -4,6 +4,7 @@ import { ThemeListComponent } from './theme-list/theme-list.component';
 import { ThemeRoutingModule } from './theme-routing-module';
 import { CreateThemeComponent } from './create-theme/create-theme.component';
 import { ThemeDetailsComponent } from './theme-details/theme-details.component';
+import { FormsModule } from '@angular/forms'
 
 
 
@@ -15,7 +16,8 @@ import { ThemeDetailsComponent } from './theme-details/theme-details.component';
   ],
   imports: [
     CommonModule,
-    ThemeRoutingModule
+    FormsModule,
+    ThemeRoutingModule,
   ],
   exports: [
     ThemeListComponent
