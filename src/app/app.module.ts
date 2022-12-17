@@ -8,11 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { AuthModule } from './auth/auth.module';
 import { ThemeModule } from './themes/theme.module';
+import { AppInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    AuthenticateComponent,
   ],
   imports: [
     AuthModule,
@@ -22,7 +25,9 @@ import { ThemeModule } from './themes/theme.module';
     CoreModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AppInterceptorProvider,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

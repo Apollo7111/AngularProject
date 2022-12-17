@@ -59,11 +59,14 @@ export class ProfileComponent implements OnInit{
   }
 
   saveProfile(): void{
-    console.log(this.form.value)
+ //   console.log(this.form.value)
     this.formSubmitted = true;
     const { additionalInfo } = this.form.value;
-    this.authService.user!.additionalInfo = additionalInfo as string;
-    this.toggleEditMode();
+    this.authService.setProfile(additionalInfo as string)
+    .subscribe(() => {
+      this.toggleEditMode();
+    })
+   // this.authService.user!.additionalInfo = additionalInfo as string;
   }
 }
 

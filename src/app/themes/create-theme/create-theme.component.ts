@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-create-theme',
@@ -8,13 +10,18 @@ import { NgForm } from '@angular/forms';
 })
 export class CreateThemeComponent {
 
-  constructor(){}
+  constructor(private themeService: ThemeService, private router: Router){}
 
   createThemeHandler(form: NgForm): void{
     if(form.invalid){
       return;
     }
-    console.log(form.value)
+    const {postName, postText} = form.value;
+
+    this.themeService.createTheme(postName, postText)
+    .subscribe(() => {
+      this.router.navigate(['']);
+    })
   }
 
 }

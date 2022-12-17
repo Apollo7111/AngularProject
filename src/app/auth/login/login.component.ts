@@ -23,21 +23,28 @@ export class LoginComponent {
     if(form.invalid){
       return;
     }
-    const {email, password} = form.value;
-     this.authService.user = {
-      username: "John",
-      password: "12345",
-      email: "john@abv.bg",
-      posts: [],
-      themes: [],
-      _id: "1",
-      additionalInfo: "private authService: AuthServiceprivate authService: AuthServiceprivate authService: AuthService",
-      __v: 0
-    };
+   // const {email, password} = form.value;
+    //  this.authService.user = {
+    //   username: "John",
+    //   password: "12345",
+    //   email: "john@abv.bg",
+    //   posts: [],
+    //   themes: [],
+    //   _id: "1",
+    //   additionalInfo: "private authService: AuthServiceprivate authService: AuthServiceprivate authService: AuthService",
+    //   __v: 0
+    // };
+    const{ username, password} = form.value;
+    this.authService.login(username!, password!)
+   // .subscribe(res => console.log(res))
+    .subscribe(user => {
+      console.log(user)
+      this.router.navigate(['']);
+    }) 
 
       const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
 
-    this.router.navigate([returnUrl])
+      this.router.navigate([returnUrl])
+      
+    }
   }
-
-}

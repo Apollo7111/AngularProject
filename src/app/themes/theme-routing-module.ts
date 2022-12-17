@@ -7,7 +7,7 @@ const routes: Routes = [
     {path: 'theme', children: [
       {path : 'create', component: CreateThemeComponent},
       {path : 'details/:id', component: ThemeDetailsComponent}
-    ]}
+   ]}
 ];
 
 export const ThemeRoutingModule = RouterModule.forChild(routes);
