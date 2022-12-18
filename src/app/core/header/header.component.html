@@ -1,6 +1,7 @@
 <html>
 <body>
 
+  
     <div class="header">
       <a routerLink="" class="logo">GamingForum</a>
       <a *ngIf="isLogged" routerLink="/theme/create">Create A Post</a>
@@ -8,11 +9,11 @@
         <a class="active" routerLink="">Home</a>
         <a *ngIf="!isLogged" routerLink="/auth/login">Login</a>
         <a *ngIf="!isLogged" routerLink="/auth/register">Register</a>
-        <a *ngIf="isLogged" routerLink="/auth/profile">{{user?.username}}'s Profile</a>
+        <!-- Angular Animation -->
+        <a [@popOverState]="stateName" (mouseleave)="toggle()" (mouseover)="toggle()" *ngIf="isLogged" routerLink="/auth/profile">{{user?.username}}'s Profile</a>
         <a *ngIf="isLogged" routerLink="/auth/logout">Logout</a>
       </div>
     </div>
-
     
     </body>
     </html>
