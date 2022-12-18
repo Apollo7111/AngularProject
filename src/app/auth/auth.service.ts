@@ -51,6 +51,10 @@ export class AuthService implements OnDestroy {
     })
     );
   }
+  loadUser(userId: string){
+    return this.http.get<IUser>(`/api/users/` + userId);
+  }
+  
 
   setProfile(additionalInfo: string){
     return this.http.put<IUser>('/api/users/profile', {additionalInfo})

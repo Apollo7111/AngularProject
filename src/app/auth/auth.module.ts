@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     LogoutComponent,
     ProfileComponent,
+    UserComponent,
   ],
   imports: [
     CommonModule,

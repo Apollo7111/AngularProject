@@ -16,12 +16,13 @@
     <div *ngFor="let post of postList; let i = index" class="comment">
       <header class="header">
         <p *ngIf="post.userId == null"><span>Deleted User</span> posted on <time>{{post.created_at | date}}</time></p>
-        <p *ngIf="post.userId != null"><span>{{post.userId.username}}</span> posted on <time>{{post.created_at | date}}</time></p>
+        <p style="cursor: pointer" [routerLink]="['/auth/user/', post.userId._id]" *ngIf="post.userId != null"><span>{{post.userId.username}}</span> posted on <time>{{post.created_at | date}}</time></p>
         <a *ngIf="user?._id == post.userId._id" style="color: red" (click)="deletePostHandler(theme._id, post._id)">Delete</a>
       </header>
       <div class="comment-main">
         <div class="userdetails">
-          <img src="./profile.png" alt="avatar">
+          <img style="cursor: pointer" [routerLink]="['/auth/user/', post.userId._id]" src="/assets/profile.png" alt="avatar">
+          <a>{{post.userId.username}}</a>
         </div>
         <div class="post-content">
           <p>{{post.text}}</p>

@@ -11,7 +11,7 @@
           <p>Created on: <time>{{theme.created_at | date}}</time></p>
           <div class="nick-name">
             <p *ngIf="theme.userId == null">Created by: <span>Deleted user</span></p>
-            <p *ngIf="theme.userId != null">Created by: <span>{{theme.userId.username}}</span></p>
+            <p style="cursor: pointer" *ngIf="theme.userId != null">Created by: <span [routerLink]="['/auth/user/', theme.userId._id]">{{theme.userId.username}}</span></p>
           </div>
         </div>
         <div *ngIf="isLogged" class="subscribers">

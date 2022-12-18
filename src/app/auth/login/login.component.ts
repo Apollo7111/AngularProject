@@ -34,8 +34,8 @@ export class LoginComponent {
     //   additionalInfo: "private authService: AuthServiceprivate authService: AuthServiceprivate authService: AuthService",
     //   __v: 0
     // };
-    const{ username, password} = form.value;
-    this.authService.login(username!, password!)
+    const{ email, password} = form.value;
+    this.authService.login(email!, password!)
    // .subscribe(res => console.log(res))
     .subscribe(user => {
       console.log(user)

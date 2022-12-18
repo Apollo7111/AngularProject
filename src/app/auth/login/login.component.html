@@ -3,8 +3,8 @@
       <form #form="ngForm" class="login" (ngSubmit)="loginHandler(form)">
         <h2>Login</h2>
         <div class="user-box">
-          <input #usernameInput="ngModel" type="text" ngModel name="username" required>
-          <label>Username</label>
+          <input #usernameInput="ngModel" type="text" ngModel name="email" required>
+          <label>Email</label>
           <!-- {{usernameInput.errors | json}} -->
           <p *ngIf="usernameInput.errors?.['required'] && usernameInput.touched" class="error">Username is required</p>
         </div>
