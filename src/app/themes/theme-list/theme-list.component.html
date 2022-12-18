@@ -12,11 +12,13 @@
             <p style="cursor: pointer" *ngIf="theme.userId != null">Created by: <span [routerLink]="['/auth/user/', theme.userId._id]">{{theme.userId.username}}</span></p>
           </div>
         </div>
-        <div *ngIf="isLogged" class="subscribers">
+        <div class="subscribers">
+          <ng-container *ngIf="isLogged">
            <button *ngIf="!theme.subscribers.includes(user?._id!)" (click)="subscribeHandler(theme._id)" class="subscribe">Subscribe</button>
            <button *ngIf="theme.subscribers.includes(user?._id!)" (click)="unsubscribeHandler(theme._id)" class="unsubscribe">Unubscribe</button>
+          </ng-container>
           <p>Comments: <span>{{theme.posts.length}}</span></p>
-          <p>Likes: <span>{{theme.subscribers.length}}</span></p>
+          <p>Subscriptions: <span>{{theme.subscribers.length}}</span></p>
         </div>
       </div>
     </div>
