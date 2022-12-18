@@ -53,6 +53,6 @@ export class ThemeService {
     return this.http.put<IPost[]>('/api/likes/' + id, {});
   }
   dislikePost(id: string){
-    return this.http.put<IPost[]>('/api/dislikes/' + id, {});
+    return this.http.put<IPost[]>('/api/dislike/' + id, {});
   }
 }
