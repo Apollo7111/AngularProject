@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit{
   ngOnInit(): void{
     this.apiService.loadThemes().subscribe({
      next: (value) => {
-      this.themeList = value;
+      this.themeList = value.filter(theme => theme.userId.username === this.user2?.username).reverse();
      },
      error: (err) => {
       console.error(err)

@@ -1,1 +1,50 @@
-<p>theme-details works!</p>
+<div>
+<div *ngFor="let theme of themeList; let i = index" class="theme-content">
+    <!-- theme-title  -->
+    <div class="theme-title">
+      <div class="theme-name-wrapper">
+        <div class="theme-name">
+          <h2>{{theme.themeName}}</h2>
+          <p>Date: <time>{{theme.created_at | date}}</time></p>
+        </div>
+        <div class="subscribers">
+          <p>Subscribers: <span>{{theme.subscribers.length}}</span></p>
+        </div>
+      </div>
+    </div>
+    <!-- comment  -->
+    <div *ngFor="let post of postList; let i = index" class="comment">
+      <header class="header">
+        <p *ngIf="post.userId == null"><span>Deleted User</span> posted on <time>{{post.created_at | date}}</time></p>
+        <p *ngIf="post.userId != null"><span>{{post.userId.username}}</span> posted on <time>{{post.created_at | date}}</time></p>
+        <a *ngIf="user?._id == post.userId._id" style="color: red" (click)="deletePostHandler(theme._id, post._id)">Delete</a>
+      </header>
+      <div class="comment-main">
+        <div class="userdetails">
+          <img src="./profile.png" alt="avatar">
+        </div>
+        <div class="post-content">
+          <p>{{post.text}}</p>
+        </div>
+      </div>
+      <div class="footer">
+        <i (click)="likePostHandler(post._id)" class="fas fa-thumbs-up">Like</i>
+                      <i (click)="dislikePostHandler(post._id)" class="fas fa-thumbs-down">Dislike</i>
+        <p><span>{{post.likes.length}}</span> likes</p>
+      </div>
+    </div>
+    <div class="answer-comment">
+      <div *ngIf="isLogged" class="answer">
+        <h2><span></span> Leave a comment:</h2>
+        <form #form="ngForm" (ngSubmit)="createPostHandler(form)">
+          <textarea  id="comment" name="postText" #titleInput="ngModel" ngModel cols="30" rows="10"></textarea>
+          <button>Post</button>
+        </form>
+      </div>
+      <div *ngIf="!isLogged">
+        <a routerLink="/auth/login"><span></span> Please Log in to Comment on this Post</a>
+      </div>
+    </div>
+  
+  </div>
+</div>

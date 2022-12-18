@@ -10,7 +10,6 @@
         <a *ngIf="!isLogged" routerLink="/auth/register">Register</a>
         <a *ngIf="isLogged" routerLink="/auth/profile">{{user?.username}}'s Profile</a>
         <a *ngIf="isLogged" routerLink="/auth/logout">Logout</a>
-        <a routerLink="">About</a>
       </div>
     </div>
 
