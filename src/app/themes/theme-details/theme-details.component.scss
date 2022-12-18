@@ -157,12 +157,14 @@
 /* answer-comment */
 
 .answer-comment {
+    resize: none;
     width: 100%;
     /* display: flex; */
     margin-top: 1em;
 }
 
 .answer-comment p {
+    resize: none;
     flex-basis: 15%;
     padding-bottom: 0.3em;
 }
@@ -180,7 +182,8 @@
 }
 
 .answer textarea {
-    width: 90%;
+    resize: none;
+    width: 91%;
     margin-top: 1rem;
     border-radius: 0.5rem;
 }
